@@ -16,14 +16,19 @@ return require('packer').startup(function(use)
     use {"preservim/nerdtree"}
     use {
 	   "windwp/nvim-autopairs",
-       config = function() require("nvim-autopairs").setup {
-           map_cr = false
-       } end
+        config = function() require("nvim-autopairs").setup {
+            map_cr = false
+        } end
     }
     use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+        "nvim-treesitter/nvim-treesitter",
+         run = ":TSUpdate"
     }
+    use {
+        "nvim-telescope/telescope.nvim", tag = "0.1.x",
+        requires = { {'nvim-lua/plenary.nvim'} }
+    }
+
 	-- Theme
 	use { "ellisonleao/gruvbox.nvim" }
 end)

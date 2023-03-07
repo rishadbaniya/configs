@@ -1,12 +1,11 @@
 -- Configurations related to coc.nvim
 -- TODO : Add proper documentation at each step
-
 local keymap = vim.keymap;
 local fn = vim.fn
 
-function check_b_space()
-    local col = vim.fn.col('.') - 1
-    return col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') ~= nil
+local check_b_space = function()
+    local col = fn.col('.') - 1
+    return col == 0 or fn.getline('.'):sub(col, col):match('%s') ~= nil
 end
 
 keymap.set("n", "<M-1>", ":NERDTreeToggle<CR>",{ noremap = true })
@@ -26,9 +25,9 @@ keymap.set("i", "<TAB>", function()
         return fn["coc#pum#next"](1)
     else
         if check_b_space() == 1 then
-            return "<TAB>"
-        else
             return fn["coc#refresh"]()
+        else
+            return "<TAB>"
         end
     end
 end, {silent = true, noremap = true, expr = true})
@@ -42,9 +41,12 @@ keymap.set("i", "<S-TAB>", function()
     end
 end, {silent = true, noremap = true, expr = true})
 
--- Different GOTO Defninitions
+-- Different GOTO Options
 keymap.set("n", "gd" ,"<Plug>(coc-definition)", {silent = true})
 keymap.set("n", "gr" ,"<Plug>(coc-references)", {silent = true})
 keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
 keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
 
+-- Different Diagnostics Options 
+keymap.set("n", "<leader>k", "<Plug>(coc-diagnostic-prev)", {silent = true})
+keymap.set("n", "<leader>j", "<Plug>(coc-diagnostic-next)", {silent = true})
