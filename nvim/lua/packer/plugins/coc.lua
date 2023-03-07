@@ -1,3 +1,6 @@
+-- Configurations related to coc.nvim
+-- TODO : Add proper documentation at each step
+
 local keymap = vim.keymap;
 local fn = vim.fn
 
@@ -39,10 +42,9 @@ keymap.set("i", "<S-TAB>", function()
     end
 end, {silent = true, noremap = true, expr = true})
 
---keymap.set("n", "gn" ,"<Plug>coc-diagnostics-next")
---keymap.set("n", "[g", "<Plug>(coc-diagnostic-prev)", {silent = true})
----- Toggle CocDiagnostics i.e list all errors/warnings thrown by LSP
---local toggle_coc_diagnostics = function()
-   --local is_enabled = fn["Coca"]
---end
+-- Different GOTO Defninitions
+keymap.set("n", "gd" ,"<Plug>(coc-definition)", {silent = true})
+keymap.set("n", "gr" ,"<Plug>(coc-references)", {silent = true})
+keymap.set("n", "gi", "<Plug>(coc-implementation)", {silent = true})
+keymap.set("n", "gr", "<Plug>(coc-references)", {silent = true})
 

@@ -1,5 +1,6 @@
 local set = vim.opt
 local cmd = vim.cmd
+local global = vim.g
 
 set.background = "dark"
 set.rnu = true
@@ -11,10 +12,9 @@ set.expandtab = true
 set.encoding = "UTF-8"
 set.errorbells = false
 
-vim.g.indentLine_char = '|'
-
+global.mapleader = " "
 --By default, indentLine plugin conceals the quotation in the JSON file, i needed that to be turned off
-vim.g.vim_json_conceal= 0
+global.vim_json_conceal= 0
 
 cmd([[colorscheme gruvbox]])
 cmd([[filetype plugin on]])
