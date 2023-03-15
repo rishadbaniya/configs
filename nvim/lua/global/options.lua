@@ -10,9 +10,16 @@ set.shiftwidth = 4
 set.expandtab = true
 set.encoding = "UTF-8"
 set.errorbells = false
+set.clipboard = "unnamedplus"
+set.scrolloff = 8
+set.wrap = false
+set.ignorecase = true
+set.updatetime = 300
 
 global.mapleader = " "
+
 --By default, indentLine plugin conceals the quotation in the JSON file, i needed that to be turned off
 global.vim_json_conceal= 0
 
 cmd([[filetype plugin on]])
+--cmd([[set clipboard+=unamedlus]])

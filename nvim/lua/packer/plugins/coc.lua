@@ -41,6 +41,18 @@ keymap.set("i", "<S-TAB>", function()
     end
 end, {silent = true, noremap = true, expr = true})
 
+-- Use K to show documentation in preview window
+function _G.show_docs()
+    local cw = vim.fn.expand('<cword>')
+    if fn.index({'vim', 'help'}, vim.bo.filetype) >= 0 then
+        vim.api.nvim_command('h ' .. cw)
+    elseif vim.api.nvim_eval('coc#rpc#ready()') then
+        vim.fn.CocActionAsync('doHover')
+    else
+        vim.api.nvim_command('!' .. vim.o.keywordprg .. ' ' .. cw)
+    end
+end
+keymap.set("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 -- Different GOTO Options
 keymap.set("n", "gd" ,"<Plug>(coc-definition)", {silent = true})
 keymap.set("n", "gr" ,"<Plug>(coc-references)", {silent = true})
