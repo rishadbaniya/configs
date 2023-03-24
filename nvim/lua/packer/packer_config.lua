@@ -9,11 +9,20 @@ return require('packer').startup(function(use)
 
     -- Enhancements
     use {"preservim/nerdcommenter"}
-    use {"itchyny/lightline.vim"}
+
+    use {'itchyny/lightline.vim'}
+
     use {"dstein64/nvim-scrollview", branch = 'main' }
     use {'Yggdroot/indentLine'}
+
     use {"ryanoasis/vim-devicons"}
+    use {"nvim-tree/nvim-web-devicons"}
+    use {'liuchengxu/vim-clap', run = ':Clap install-binary'}
+
+
     use {"preservim/nerdtree"}
+    use {"tpope/vim-surround"}
+
     use {
 	   "windwp/nvim-autopairs",
         config = function() require("nvim-autopairs").setup {
@@ -31,4 +40,8 @@ return require('packer').startup(function(use)
 
 	-- Theme
 	use { "ellisonleao/gruvbox.nvim" }
+
+
 end)
+
+

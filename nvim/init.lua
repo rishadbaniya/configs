@@ -12,3 +12,5 @@ require("packer.plugins.coc")
 require("packer.plugins.gruvbox")
 require("packer.plugins.indentline")
 require("packer.plugins.telescope")
+require("packer.plugins.vim_surround")
+

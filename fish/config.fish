@@ -8,6 +8,7 @@ set -x LOGSEQ_DIR $HOME/.local/logseq
 set -x FLUTTER_DIR $HOME/hdd/flutter/bin
 set -x ANDROID_STUDIO $HOME/hdd/android/android-studio/bin
 set -x PLATFORM_TOOLS $HOME/hdd/android/sdk/platform-tools
+set -x RUSTFLAGS "$RUSTFLAGS -A unused_imports -A dead_code"
 
 set -x PATH $PATH $FNM $LOGSEQ_DIR $FLUTTER_DIR $ANDROID_STUDIO $PLATFORM_TOOLS
 
