@@ -16,6 +16,8 @@ set.wrap = false
 set.ignorecase = true
 set.updatetime = 300
 set.cursorline = true
+set.colorcolumn = "140"
+
 
 --local fold_column = vim.fn["foldcolumn"]();
 --print(fold_column + 10)
