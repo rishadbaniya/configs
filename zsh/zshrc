@@ -1,0 +1,38 @@
+# Path to the oh-my-zsh installation.
+export ZSH="/usr/local/share/.oh-my-zsh"
+
+export ZSH_THEME="agnoster"
+export CASE_SENSITIVE="true"
+export ENABLE_CORRECTION="true"
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7c6f64,bg=#282828,normal"
+
+
+# Running oh-my-zsh system wide
+source $ZSH/oh-my-zsh.sh
+
+#Running the components system wide 
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# ========ZSH AUTOSUGGEST ENVIRONMENT VARIABLE CONFIG========
+# Color combination according to the gruvbox theme,
+# Background : #282828 & Foreground : #7c6f64 
+
+
+
+# Rust Aliases
+alias cr="cargo run"
+alias cb="cargo build"
+
+alias ls="exa"
+alias vi="nvim"
+alias vim="nvim"
+
+plugins=( 
+    git
+    zsh-vi-mode
+)
+
+bindkey -v
+bindkey '\ef' autosuggest-accept
+
