@@ -1,38 +1,43 @@
-# Path to the oh-my-zsh installation.
+# Set the path to the oh-my-zsh installation directory
 export ZSH="/usr/local/share/.oh-my-zsh"
 
+# Set the agnoster theme as the default zsh theme
 export ZSH_THEME="agnoster"
+
+# Enable case-sensitive tab completion and command correction
 export CASE_SENSITIVE="true"
 export ENABLE_CORRECTION="true"
+
+# Configure the highlight style for zsh-autosuggestions
 export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7c6f64,bg=#282828,normal"
 
 
-# Running oh-my-zsh system wide
+# Load the oh-my-zsh framework(globally)
 source $ZSH/oh-my-zsh.sh
 
-#Running the components system wide 
+# Load the zsh-syntax-highlighting and zsh-autosuggestions plugins (globally)
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-# ========ZSH AUTOSUGGEST ENVIRONMENT VARIABLE CONFIG========
-# Color combination according to the gruvbox theme,
-# Background : #282828 & Foreground : #7c6f64 
-
-
 
 # Rust Aliases
 alias cr="cargo run"
 alias cb="cargo build"
 
+# Set exa as the default replacement for ls
 alias ls="exa"
+
+# Set nvim as the default editor for vi and vim
 alias vi="nvim"
 alias vim="nvim"
 
+# Load the following plugins(spaces are the delimeter here)
 plugins=( 
     git
     zsh-vi-mode
 )
 
+# Set vi-mode keybindings
 bindkey -v
-bindkey '\ef' autosuggest-accept
 
+# Set the keybinding for accepting autosuggestions(which is Alt + f)
+bindkey '\ef' autosuggest-accept
