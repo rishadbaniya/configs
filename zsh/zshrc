@@ -8,9 +8,13 @@ export ZSH_THEME="agnoster"
 export CASE_SENSITIVE="true"
 export ENABLE_CORRECTION="true"
 
-# Configure the highlight style for zsh-autosuggestions
-export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#7c6f64,bg=#282828,normal"
+#export ZSH_AUTOSUGGEST_STRATEGY="match_any"
 
+# Configure the highlight style for zsh-autosuggestions
+export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ebdbb2,bg=#282828,bold,underline"
+
+# Configure the autosuggest strategy for the zsh-autosuggestions
+export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 
 # Load the oh-my-zsh framework(globally)
 source $ZSH/oh-my-zsh.sh
