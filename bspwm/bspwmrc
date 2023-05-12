@@ -2,6 +2,9 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+#TODO : Make use of a daemon to mount the cloud storage
+rclone --vfs-cache-mode writes mount "onedrive":  ~/cloud/onedrive/ &
+
 nitrogen --restore
 
 bspc monitor -d I II III IV V VI VII VIII IX X
