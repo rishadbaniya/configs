@@ -15,6 +15,7 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ebdbb2,bg=#282828,bold,underline"
 
 # Configure the autosuggest strategy for the zsh-autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+export PATH="/usr/local/bin:$PATH"
 
 # Load the oh-my-zsh framework(globally)
 source $ZSH/oh-my-zsh.sh

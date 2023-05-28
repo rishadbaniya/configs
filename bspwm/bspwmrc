@@ -2,13 +2,21 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 
+# If a monitor is connected in HDMI then use the first config else use the second one
+if [[ $(xrandr -q | grep "HDMI-1-1 connected") ]]; then
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.01 --rotate normal HDMI-1-1 --mode 1920x1080 --rotate normal --right-of eDP1
+else
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.01 --rotate normal
+fi
+
 #TODO : Make use of a daemon to mount the cloud storage
-rclone --vfs-cache-mode writes mount "onedrive":  ~/cloud/onedrive/ &
+#rclone --vfs-cache-mode writes mount "onedrive":  ~/cloud/onedrive/ &
 
 nitrogen --restore
 
-bspc monitor -d I II III IV V VI VII VIII IX X
-
+bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X  
+bspc monitor HDMI-1-1 -d XI XII XIII XIV XV XVI XVII XVIII XIX XX
+ 
 bspc config border_width		0
 bspc config window_gap			1		 
 bspc config focused_border_color \#3c3836
@@ -30,7 +38,6 @@ bspc rule -a firefox desktop='^1'
 
 wmname LG3D &
 bspc rule -a android-studio state=floating border=off follow=on
-
 bspc rule -a polybar border=off manage=off
 
 #Autostart
