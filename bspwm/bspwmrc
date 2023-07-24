@@ -41,7 +41,7 @@ bspc rule -a android-studio state=floating border=off follow=on
 bspc rule -a polybar border=off manage=off
 
 #Autostart
-feh --bg-scale /home/rishad/Pictures/rust_wallpaper.png
+feh --bg-scale /home/rishad/Documents/wallpaper_zeus.jpg
 
 # Swap ESC and CAPSLOCK
 setxkbmap -option caps:swapescape
@@ -50,3 +50,4 @@ setxkbmap -option caps:swapescape
 xset r rate 200 40
 
 polybar &
+picom &

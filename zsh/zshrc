@@ -1,6 +1,8 @@
 # Set the path to the oh-my-zsh installation directory
 export ZSH="/usr/local/share/.oh-my-zsh"
 
+
+
 # Set the agnoster theme as the default zsh theme
 export ZSH_THEME="agnoster"
 
@@ -15,7 +17,9 @@ export ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#ebdbb2,bg=#282828,bold,underline"
 
 # Configure the autosuggest strategy for the zsh-autosuggestions
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
-export PATH="/usr/local/bin:$PATH"
+
+#export PATH="$HOME/.local/logseq:$HOME/.local/share/fnm:$PATH:"
+export PATH="/home/rishad/hdd/flutter/bin:/home/rishad/hdd/android/android-studio/bin:/home/rishad/hdd/android/sdk/platform-tools:/usr/local/bin:$PATH"
 
 # Load the oh-my-zsh framework(globally)
 source $ZSH/oh-my-zsh.sh
@@ -27,6 +31,8 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # Rust Aliases
 alias cr="cargo run"
 alias cb="cargo build"
+
+alias cat="bat"
 
 # Set exa as the default replacement for ls
 alias ls="exa"
@@ -46,3 +52,6 @@ bindkey -v
 
 # Set the keybinding for accepting autosuggestions(which is Alt + f)
 bindkey '\ef' autosuggest-accept
+
+
+
