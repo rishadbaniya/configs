@@ -30,5 +30,6 @@
             }
         }
     },
-    "list.maxPreviewHeight": 40
+    "list.maxPreviewHeight": 40,
+    "dart.lineLength": 140
 }

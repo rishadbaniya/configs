@@ -33,7 +33,7 @@ font:
    normal:
        family: "FiraCode Nerd Font"
        style : Regular
-   size : 7.0
+   size : 9.0
    # Offset "x" marks letter spacing and "y" marks line spacing
    offset : 
       x : 0 
