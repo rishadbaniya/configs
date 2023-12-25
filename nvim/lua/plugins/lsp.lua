@@ -1,7 +1,15 @@
 return {
-    'neovim/nvim-lspconfig',
-    config = function()
-        require('lspconfig').lua_ls.setup({})
-    end
-}
+	"neovim/nvim-lspconfig",
+	dependencies = {
+		{
+			"folke/neodev.nvim", -- just a plugin for neovim config/plugin dev
+			config = function()
+				require("neodev").setup({})
+			end,
+		},
+	},
 
+	config = function()
+		require("lspconfig").lua_ls.setup({})
+	end,
+}
