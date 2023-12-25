@@ -14,7 +14,7 @@ set.clipboard = "unnamedplus"
 set.scrolloff = 8
 set.wrap = false
 set.ignorecase = true
-set.updatetime = 300
+set.updatetime = 250
 set.cursorline = true
 set.colorcolumn = "140"
 
@@ -28,5 +28,5 @@ global.vim_json_conceal = 0
 global.mapleader = " "
 
 
-cmd([[filetype plugin on]])
---cmd([[set clipboard+=unamedlus]])
+cmd"filetype plugin on"
+cmd"set signcolumn=yes" -- shows that diagnostic signs at the left of the numbers
