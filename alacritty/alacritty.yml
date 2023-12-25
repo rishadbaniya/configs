@@ -28,12 +28,11 @@ colors:
     magenta: '0xd3869b'
     cyan:    '0x89b482'
     white:   '0xdfbf8e'
-
 font:
    normal:
        family: "FiraCode Nerd Font"
        style : Regular
-   size : 9.0
+   size : 8.0
    # Offset "x" marks letter spacing and "y" marks line spacing
    offset : 
       x : 0 

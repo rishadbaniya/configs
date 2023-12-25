@@ -4,18 +4,18 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 # If a monitor is connected in HDMI then use the first config else use the second one
 if [[ $(xrandr -q | grep "HDMI-1-1 connected") ]]; then
-    xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.01 --rotate normal --output HDMI-1-1 --rate 75.0 --mode 1920x1080 --rotate left --left-of eDP-1
+    xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.01 --rotate normal --output HDMI-1-1 --rate 75.0 --mode 1920x1080 --rotate right --right-of eDP-1
+    bspc monitor eDP-1 -d I II III IV V
+    bspc monitor HDMI-1-1 -d VI VII VIII IX X 
 else
     xrandr --output eDP-1 --primary --mode 1920x1080 --rate 60.01 --rotate normal
+    bspc monitor eDP-1 -d I II III IV V VI VII VIII IX X
 fi
 
 #TODO : Make use of a daemon to mount the cloud storage
 #rclone --vfs-cache-mode writes mount "onedrive":  ~/cloud/onedrive/ &
 
 nitrogen --restore
-
-bspc monitor HDMI-1-1 -d I II III IV V 
-bspc monitor eDP-1 -d VI VII VIII IX X
  
 bspc config border_width		0
 bspc config window_gap			1		 
@@ -41,17 +41,16 @@ bspc rule -a android-studio state=floating border=off follow=on
 #bspc rule -a polybar border=off manage=off
 
 #Autostart
-feh --bg-scale $HOME/.config/configs/wallpaper/greek_god_landscape.jpg $HOME/.config/configs/wallpaper/scifi_portrait.jpg
+feh --bg-scale $HOME/.config/configs/wallpaper/greek_god_landscape.jpg $HOME/.config/configs/wallpaper/amagekaru.jpg
 
 # Swap ESC and CAPSLOCK
 setxkbmap -option caps:swapescape
 
 # Set Keyboard Delay Rate and Repeate Rate respectively
-xset r rate 200 40
+xset r rate 200 60
 
 $HOME/.config/configs/polybar/launch.sh
 
 picom &
-
 
 DISPLAY=:0.0 feh --bg-scale /home/rishad/Documents/wallpaper_zeus.jpg
