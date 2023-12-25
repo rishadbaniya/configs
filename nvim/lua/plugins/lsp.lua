@@ -1,1 +1,7 @@
-return {'neovim/nvim-lspconfig'}
+return {
+    'neovim/nvim-lspconfig',
+    config = function()
+        require('lspconfig').lua_ls.setup({})
+    end
+}
+
