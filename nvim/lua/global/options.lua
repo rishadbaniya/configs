@@ -2,6 +2,7 @@ local set = vim.opt
 local cmd = vim.cmd
 local global = vim.g
 
+set.termguicolors = true
 set.rnu = true
 set.nu = true
 set.tabstop = 4
@@ -17,7 +18,8 @@ set.ignorecase = true
 set.updatetime = 250
 set.cursorline = true
 set.colorcolumn = "140"
-
+set.conceallevel = 3
+global.webdevicons_conceal_nerdtree_brackets = 1
 
 --local fold_column = vim.fn["foldcolumn"]();
 --print(fold_column + 10)
@@ -27,6 +29,24 @@ set.foldenable = false
 global.vim_json_conceal = 0
 global.mapleader = " "
 
+cmd("filetype plugin on")
+cmd("set signcolumn=yes") -- shows that diagnostic signs at the left of the numbers
 
-cmd"filetype plugin on"
-cmd"set signcolumn=yes" -- shows that diagnostic signs at the left of the numbers
+-- gray
+vim.api.nvim_set_hl(0, "CmpItemAbbrDeprecated", { bg = "NONE", strikethrough = true, fg = "#808080" })
+-- blue
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { bg = "NONE", fg = "#569CD6" })
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatchFuzzy", { link = "CmpIntemAbbrMatch" })
+-- light blue
+vim.api.nvim_set_hl(0, "CmpItemKindVariable", { bg = "NONE", fg = "#9CDCFE" })
+vim.api.nvim_set_hl(0, "CmpItemKindInterface", { link = "CmpItemKindVariable" })
+vim.api.nvim_set_hl(0, "CmpItemKindText", { link = "CmpItemKindVariable" })
+-- pink
+vim.api.nvim_set_hl(0, "CmpItemKindFunction", { bg = "NONE", fg = "#C586C0" })
+vim.api.nvim_set_hl(0, "CmpItemKindMethod", { link = "CmpItemKindFunction" })
+-- front
+vim.api.nvim_set_hl(0, "CmpItemKindKeyword", { bg = "NONE", fg = "#D4D4D4" })
+vim.api.nvim_set_hl(0, "CmpItemKindProperty", { link = "CmpItemKindKeyword" })
+vim.api.nvim_set_hl(0, "CmpItemKindUnit", { link = "CmpItemKindKeyword" })
+
+vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { bg = "NONE", fg = "#569CD6" })

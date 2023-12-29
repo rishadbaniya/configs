@@ -9,14 +9,3 @@ require("global.lsp")
 
 -- Initialize lazy and plugins
 require("lazy_init")
-
-
-
-
-
-
-
-
-
-
-

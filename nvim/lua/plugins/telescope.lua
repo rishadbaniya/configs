@@ -15,6 +15,6 @@ return {
 			builtin.grep_string({ search = fn.input("Grep > ") })
 		end, { noremap = true })
 
-		keymap.set("n", "<leader>;", "<cmd>Telescope buffers<CR>", { noremap = true })
+		keymap.set("n", "<leader>j", "<cmd>Telescope buffers<CR>", { noremap = true })
 	end,
 }

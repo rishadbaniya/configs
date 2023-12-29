@@ -7,6 +7,7 @@ return {
 		formatters_by_ft = {
 			javascript = { { "eslint", "prettier" } },
 			typescript = { { "eslint" } },
+			ocaml = { "ocamlformat" },
 			json = { "jq" },
 			lua = { "stylua" },
 			rust = { "rustfmt" },
