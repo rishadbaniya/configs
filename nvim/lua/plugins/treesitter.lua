@@ -32,7 +32,6 @@ return {
 					"lua",
 					"make",
 					"markdown",
-					"perl",
 					"php",
 					"phpdoc",
 					"python",

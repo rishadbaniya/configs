@@ -20,6 +20,8 @@ set.cursorline = true
 set.colorcolumn = "140"
 set.conceallevel = 3
 global.webdevicons_conceal_nerdtree_brackets = 1
+global.mapleader = " "
+global.maplocalleader = ","
 
 --local fold_column = vim.fn["foldcolumn"]();
 --print(fold_column + 10)
@@ -27,7 +29,6 @@ global.webdevicons_conceal_nerdtree_brackets = 1
 set.foldenable = false
 --By default, indentLine plugin conceals the quotation in the JSON file, i needed that to be turned off
 global.vim_json_conceal = 0
-global.mapleader = " "
 
 cmd("filetype plugin on")
 cmd("set signcolumn=yes") -- shows that diagnostic signs at the left of the numbers

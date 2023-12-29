@@ -38,13 +38,14 @@ return {
 					luasnip.lsp_expand(args.body) -- For `luasnip` users.
 				end,
 			},
+			preselect = cmp.PreselectMode.None,
 			mapping = {
 				["<C-d>"] = cmp.mapping.scroll_docs(-4),
 				["<C-u>"] = cmp.mapping.scroll_docs(4),
 				["<C-Space>"] = cmp.mapping.complete(),
 				["<C-e>"] = cmp.mapping.close(),
 				["<C-b>"] = cmp.mapping.abort(),
-				["<CR>"] = cmp.mapping.confirm({ select = true }),
+				["<CR>"] = cmp.mapping.confirm({ select = false }),
 				["<Tab>"] = cmp.mapping.select_next_item({ behaviour = cmp.SelectBehavior.Insert }),
 				["<S-Tab>"] = cmp.mapping.select_prev_item({ behaviour = cmp.SelectBehavior.Insert }),
 			},
