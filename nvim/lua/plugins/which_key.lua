@@ -16,6 +16,12 @@ return {
 		-- refer to the configuration section below
 	},
 	config = function()
+		local toggleterm_terminal = require("toggleterm.terminal").Terminal
+		local toggleterm_toggle = function()
+			local float = toggleterm_terminal:new({ direction = "float" })
+			return float:toggle()
+		end
+
 		local which_k = require("which-key")
 
 		which_k.setup({
@@ -44,6 +50,13 @@ return {
 				s = { name = "+source/swap" },
 				y = { name = "+yank" },
 				O = { name = "+options" },
+			},
+			["<localleader>"] = {
+				t = {
+					f = {
+						{ toggleterm_toggle, "Toggle Floating Terminal" },
+					},
+				},
 			},
 		})
 	end,
