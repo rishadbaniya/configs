@@ -11,6 +11,7 @@ return {
 		require("lspconfig").clangd.setup({})
 		require("lspconfig").ocamllsp.setup({})
 		require("lspconfig").texlab.setup({})
+		require("lspconfig").gopls.setup({})
 		--require("lspconfig").perlpls.setup({})
 		--settings = {
 		--perlnavigator = {
