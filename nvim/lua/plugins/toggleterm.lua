@@ -18,7 +18,17 @@ return {
 			},
 		})
 
-		--this only works to toggle the terminal on i want to close to using the same key
-		--vim.keymap.set("n", "<localleader>t", "<CMD>ToggleTerm<CR>", { noremap = true })
+		local Terminal = require("toggleterm.terminal").Terminal
+		local float_term = Terminal:new({ direction = "float" })
+
+		function _TOGGLE_FLOAT_TERM()
+			if float_term:is_open() then
+				float_term:close()
+			else
+				float_term:open()
+			end
+		end
+
+		vim.keymap.set({ "n", "t" }, "<leader>tt", "<CMD>lua _TOGGLE_FLOAT_TERM()<CR>", { noremap = true })
 	end,
 }
