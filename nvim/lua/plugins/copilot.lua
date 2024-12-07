@@ -5,8 +5,15 @@ return {
 		event = "InsertEnter",
 		build = ":Copilot auth",
 		config = function()
-			opts = {
-				suggestion = { enabled = false },
+			local opts = {
+				suggestion = {
+					enabled = true,
+					auto_trigger = true,
+					debounce = 50,
+					keymap = {
+						accept = "<M-f>",
+					},
+				},
 				panel = { enabled = false },
 				filetypes = {
 					gitcommit = true,
