@@ -16,5 +16,17 @@ return {
 		end, { noremap = true })
 
 		keymap.set("n", "<leader>b", "<cmd>Telescope buffers<CR>", { noremap = true })
+
+		require("telescope").setup({
+			defaults = {
+				layout_strategy = "vertical",
+				layout_config = {
+					width = 0.9,
+					height = 0.9,
+					preview_cutoff = 1,
+					prompt_position = "bottom",
+				},
+			},
+		})
 	end,
 }
