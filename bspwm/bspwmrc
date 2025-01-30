@@ -48,6 +48,6 @@ redshift -P -O 5000
 
 $HOME/.config/configs/polybar/launch.sh
 
-picom &
+#picom &
 
-DISPLAY=:0.0 feh --bg-scale /home/rishad/Documents/wallpaper_zeus.jpg
+#DISPLAY=:0.0 feh --bg-scale /home/rishad/Documents/wallpaper_zeus.jpg
