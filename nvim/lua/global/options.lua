@@ -17,7 +17,7 @@ set.wrap = false
 set.ignorecase = true
 set.updatetime = 250
 set.cursorline = true
-set.colorcolumn = "140"
+set.colorcolumn = "180"
 set.conceallevel = 3
 global.webdevicons_conceal_nerdtree_brackets = 1
 global.mapleader = " "
@@ -28,6 +28,7 @@ global.maplocalleader = ","
 --set.foldcolumn = "4"
 set.foldenable = false
 --By default, indentLine plugin conceals the quotation in the JSON file, i needed that to be turned off
+
 global.vim_json_conceal = 0
 
 cmd("filetype plugin on")
@@ -51,3 +52,4 @@ vim.api.nvim_set_hl(0, "CmpItemKindProperty", { link = "CmpItemKindKeyword" })
 vim.api.nvim_set_hl(0, "CmpItemKindUnit", { link = "CmpItemKindKeyword" })
 
 vim.api.nvim_set_hl(0, "CmpItemAbbrMatch", { bg = "NONE", fg = "#569CD6" })
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")

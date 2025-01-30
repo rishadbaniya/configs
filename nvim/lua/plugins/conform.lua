@@ -10,7 +10,9 @@ return {
 			ocaml = { "ocamlformat" },
 			c = { { "clang-format" } },
 			xml = { { "xmlformat" } },
-			json = { "jq" },
+			--[[
+			   [json = { "jq" },
+               ]]
 			lua = { "stylua" },
 			html = { "htmlbeautifier" },
 			["*"] = { "trim_whitespace", "squeeze_blanks", "trim_newlines" },

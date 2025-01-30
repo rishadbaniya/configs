@@ -25,17 +25,17 @@ return {
 		--})
 		require("lspconfig").pyright.setup({})
 		--setup for single file support
-		require("lspconfig").tsserver.setup({
-			cmd = { "typescript-language-server", "--stdio" },
-			filetypes = {
-				"javascript",
-				"javascriptreact",
-				"javascript.jsx",
-				"typescript",
-				"typescriptreact",
-				"typescript.tsx",
-			},
-		})
+		--require("lspconfig").tsserver.setup({
+		--cmd = { "typescript-language-server", "--stdio" },
+		--filetypes = {
+		--"javascript",
+		--"javascriptreact",
+		--"javascript.jsx",
+		--"typescript",
+		--"typescriptreact",
+		--"typescript.tsx",
+		--},
+		--})
 		require("lspconfig").dartls.setup({
 			cmd = { "dart", "language-server", "--protocol=lsp" },
 			filetypes = { "dart" },

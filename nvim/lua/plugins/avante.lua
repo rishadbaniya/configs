@@ -18,8 +18,8 @@ return {
 		},
 	},
 	opts = {
-		--provider = "claude",
-		provider = "copilot",
+		provider = "claude",
+		--provider = "copilot",
 		claude = {
 			endpoint = "https://api.anthropic.com",
 			model = "claude-3-5-sonnet-20240620",

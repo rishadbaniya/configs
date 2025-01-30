@@ -1,16 +1,36 @@
 return {
-	"simrat39/rust-tools.nvim",
-	config = function()
-		local rt = require("rust-tools")
-		rt.setup({
-			server = {
-				on_attach = function(_, bufnr)
-					-- Hover actions
-					vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { buffer = bufnr })
-					-- Code action groups
-					vim.keymap.set("n", "<Leader>a", rt.code_action_group.code_action_group, { buffer = bufnr })
-				end,
+	"mrcjkb/rustaceanvim",
+	version = "^5", -- Recommended
+	ft = { "rust" },
+	config = function() end,
+	opts = {
+		server = {
+			on_attach = function(_, bufnr)
+				--vim.keymap.set("n", "<leader>ca", function()
+				--vim.cmd.RustLsp("codeAction")
+				--end, { buffer = bufnr, desc = "Code Action" })
+				--vim.keymap.set("n", "<leader>cl", function()
+				--vim.cmd.RustLsp("codeLens")
+				--end, { buffer = bufnr, desc = "CodeLens Action" })
+			end,
+			settings = {
+				["rust-analyzer"] = {
+					checkOnSave = {
+						command = "clippy",
+						extraArgs = { "--", "-W", "warnings" },
+					},
+					assist = {
+						importGranularity = "module",
+						importPrefix = "by_self",
+					},
+					cargo = {
+						loadOutDirsFromCheck = true,
+					},
+					procMacro = {
+						enable = true,
+					},
+				},
 			},
-		})
-	end,
+		},
+	},
 }
