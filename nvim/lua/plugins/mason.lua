@@ -23,6 +23,11 @@ return {
 					"rust_analyzer",
 					"pyright",
 				},
+				automatic_enable = {
+					exclude = {
+						"rust_analyzer",
+					},
+				},
 				automatic_installation = true,
 			})
 		end,
