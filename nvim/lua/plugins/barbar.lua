@@ -12,7 +12,7 @@ return {
 	opts = {},
 	config = function()
 		require("barbar").setup()
-		-- Move to previous/next
+		-- move to the left and right tabs
 		vim.api.nvim_set_keymap("n", "<C-h>", "<Cmd>BufferPrevious<CR>", opts)
 		vim.api.nvim_set_keymap("n", "<C-l>", "<Cmd>BufferNext<CR>", opts)
 	end,
