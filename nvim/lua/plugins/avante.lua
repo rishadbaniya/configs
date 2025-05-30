@@ -3,12 +3,11 @@ return {
 	event = "VeryLazy",
 	build = "make",
 	dependencies = {
-		"nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
+		"nvim-tree/nvim-web-devicons",
 		"stevearc/dressing.nvim",
 		"nvim-lua/plenary.nvim",
 		"MunifTanjim/nui.nvim",
 		"zbirenbaum/copilot.lua",
-		--- The below is optional, make sure to setup it properly if you have lazy=true
 		{
 			"MeanderingProgrammer/render-markdown.nvim",
 			opts = {
@@ -19,10 +18,9 @@ return {
 	},
 	opts = {
 		provider = "claude",
-		--provider = "copilot",
 		claude = {
 			endpoint = "https://api.anthropic.com",
-			model = "claude-3-5-sonnet-20240620",
+			model = "claude-3-7-sonnet-20250219",
 			temperature = 0,
 			max_tokens = 4096,
 		},
