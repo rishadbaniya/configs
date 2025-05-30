@@ -8,7 +8,10 @@ return {
 			typescript = { { "eslint_d" } },
 			typescriptreact = { { "eslint_d" } }, -- https://github.com/stevearc/conform.nvim/issues/218#issuecomment-1826438350
 			ocaml = { "ocamlformat" },
-			c = { { "clang-format" } },
+			--c = { { "clang-format" } },
+			--cc = { { "clang-format" } },
+			--cpp = { { "clang-format" } },
+			--h = { { "clang-format" } },
 			xml = { { "xmlformat" } },
 			--[[
 			   [json = { "jq" },
@@ -26,6 +29,11 @@ return {
 		end,
 		log_level = vim.log.levels.ERROR,
 		notify_on_error = true,
+		formatters = {
+			clang_format = {
+				prepend_args = { "--style={ColumnLimit: 0}" },
+			},
+		},
 	},
 	config = function(_, opts)
 		local cs_fixer = require("conform.formatters.php_cs_fixer")
