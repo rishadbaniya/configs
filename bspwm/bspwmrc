@@ -40,14 +40,8 @@ wmname LG3D &
 bspc rule -a android-studio state=floating border=off follow=on
 #bspc rule -a polybar border=off manage=off
 
-#Autostart
-feh --bg-scale $HOME/.config/configs/wallpaper/greek_god_landscape.jpg $HOME/.config/configs/wallpaper/amagekaru.jpg
 setxkbmap -option caps:swapescape # Swap ESC and CAPSLOCK
 xset r rate 180 100 # 180 is the delay until next click to consider that as repeated click, 90 is the speed
 redshift -P -O 5000
 
 $HOME/.config/configs/polybar/launch.sh
-
-#picom &
-
-#DISPLAY=:0.0 feh --bg-scale /home/rishad/Documents/wallpaper_zeus.jpg
